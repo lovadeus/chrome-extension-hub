@@ -10,33 +10,158 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as TutoriaisRouteImport } from './routes/tutoriais'
+import { Route as ApiPublicLicenseActivateRouteImport } from './routes/api/public/license/activate'
+import { Route as ApiPublicLicenseDeactivateRouteImport } from './routes/api/public/license/deactivate'
+import { Route as ApiPublicLicenseStatusRouteImport } from './routes/api/public/license/status'
+import { Route as ApiPublicLicenseValidateRouteImport } from './routes/api/public/license/validate'
+import { Route as ApiPublicWebhooksMercadopagoRouteImport } from './routes/api/public/webhooks/mercadopago'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutoriaisRoute = TutoriaisRouteImport.update({
+  id: '/tutoriais',
+  path: '/tutoriais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicLicenseActivateRoute =
+  ApiPublicLicenseActivateRouteImport.update({
+    id: '/api/public/license/activate',
+    path: '/api/public/license/activate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicLicenseDeactivateRoute =
+  ApiPublicLicenseDeactivateRouteImport.update({
+    id: '/api/public/license/deactivate',
+    path: '/api/public/license/deactivate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicLicenseStatusRoute = ApiPublicLicenseStatusRouteImport.update({
+  id: '/api/public/license/status',
+  path: '/api/public/license/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicLicenseValidateRoute =
+  ApiPublicLicenseValidateRouteImport.update({
+    id: '/api/public/license/validate',
+    path: '/api/public/license/validate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicWebhooksMercadopagoRoute =
+  ApiPublicWebhooksMercadopagoRouteImport.update({
+    id: '/api/public/webhooks/mercadopago',
+    path: '/api/public/webhooks/mercadopago',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/planos': typeof PlanosRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/tutoriais': typeof TutoriaisRoute
+  '/api/public/license/activate': typeof ApiPublicLicenseActivateRoute
+  '/api/public/license/deactivate': typeof ApiPublicLicenseDeactivateRoute
+  '/api/public/license/status': typeof ApiPublicLicenseStatusRoute
+  '/api/public/license/validate': typeof ApiPublicLicenseValidateRoute
+  '/api/public/webhooks/mercadopago': typeof ApiPublicWebhooksMercadopagoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/planos': typeof PlanosRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/tutoriais': typeof TutoriaisRoute
+  '/api/public/license/activate': typeof ApiPublicLicenseActivateRoute
+  '/api/public/license/deactivate': typeof ApiPublicLicenseDeactivateRoute
+  '/api/public/license/status': typeof ApiPublicLicenseStatusRoute
+  '/api/public/license/validate': typeof ApiPublicLicenseValidateRoute
+  '/api/public/webhooks/mercadopago': typeof ApiPublicWebhooksMercadopagoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/planos': typeof PlanosRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/tutoriais': typeof TutoriaisRoute
+  '/api/public/license/activate': typeof ApiPublicLicenseActivateRoute
+  '/api/public/license/deactivate': typeof ApiPublicLicenseDeactivateRoute
+  '/api/public/license/status': typeof ApiPublicLicenseStatusRoute
+  '/api/public/license/validate': typeof ApiPublicLicenseValidateRoute
+  '/api/public/webhooks/mercadopago': typeof ApiPublicWebhooksMercadopagoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/planos'
+    | '/reset-password'
+    | '/tutoriais'
+    | '/api/public/license/activate'
+    | '/api/public/license/deactivate'
+    | '/api/public/license/status'
+    | '/api/public/license/validate'
+    | '/api/public/webhooks/mercadopago'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/planos'
+    | '/reset-password'
+    | '/tutoriais'
+    | '/api/public/license/activate'
+    | '/api/public/license/deactivate'
+    | '/api/public/license/status'
+    | '/api/public/license/validate'
+    | '/api/public/webhooks/mercadopago'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/planos'
+    | '/reset-password'
+    | '/tutoriais'
+    | '/api/public/license/activate'
+    | '/api/public/license/deactivate'
+    | '/api/public/license/status'
+    | '/api/public/license/validate'
+    | '/api/public/webhooks/mercadopago'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  PlanosRoute: typeof PlanosRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  TutoriaisRoute: typeof TutoriaisRoute
+  ApiPublicLicenseActivateRoute: typeof ApiPublicLicenseActivateRoute
+  ApiPublicLicenseDeactivateRoute: typeof ApiPublicLicenseDeactivateRoute
+  ApiPublicLicenseStatusRoute: typeof ApiPublicLicenseStatusRoute
+  ApiPublicLicenseValidateRoute: typeof ApiPublicLicenseValidateRoute
+  ApiPublicWebhooksMercadopagoRoute: typeof ApiPublicWebhooksMercadopagoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +173,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutoriais': {
+      id: '/tutoriais'
+      path: '/tutoriais'
+      fullPath: '/tutoriais'
+      preLoaderRoute: typeof TutoriaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/license/activate': {
+      id: '/api/public/license/activate'
+      path: '/api/public/license/activate'
+      fullPath: '/api/public/license/activate'
+      preLoaderRoute: typeof ApiPublicLicenseActivateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/license/deactivate': {
+      id: '/api/public/license/deactivate'
+      path: '/api/public/license/deactivate'
+      fullPath: '/api/public/license/deactivate'
+      preLoaderRoute: typeof ApiPublicLicenseDeactivateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/license/status': {
+      id: '/api/public/license/status'
+      path: '/api/public/license/status'
+      fullPath: '/api/public/license/status'
+      preLoaderRoute: typeof ApiPublicLicenseStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/license/validate': {
+      id: '/api/public/license/validate'
+      path: '/api/public/license/validate'
+      fullPath: '/api/public/license/validate'
+      preLoaderRoute: typeof ApiPublicLicenseValidateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/webhooks/mercadopago': {
+      id: '/api/public/webhooks/mercadopago'
+      path: '/api/public/webhooks/mercadopago'
+      fullPath: '/api/public/webhooks/mercadopago'
+      preLoaderRoute: typeof ApiPublicWebhooksMercadopagoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  PlanosRoute: PlanosRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  TutoriaisRoute: TutoriaisRoute,
+  ApiPublicLicenseActivateRoute: ApiPublicLicenseActivateRoute,
+  ApiPublicLicenseDeactivateRoute: ApiPublicLicenseDeactivateRoute,
+  ApiPublicLicenseStatusRoute: ApiPublicLicenseStatusRoute,
+  ApiPublicLicenseValidateRoute: ApiPublicLicenseValidateRoute,
+  ApiPublicWebhooksMercadopagoRoute: ApiPublicWebhooksMercadopagoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
